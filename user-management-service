@@ -1,0 +1,35 @@
+spring:
+  rabbitmq:
+    host: ${RABBITMQ_HOST:localhost}
+    port: ${RABBITMQ_PORT:5672}
+    username: ${RABBITMQ_USERNAME:guest}
+    password: ${RABBITMQ_PASSWORD:guest}
+  data:
+    redis:
+      host: ${REDIS_HOST:localhost}
+      port: ${REDIS_PORT:6379}
+      timeout: 2000
+      lettuce:
+        pool:
+          max-active: 10
+          max-idle: 5
+          min-idle: 1
+
+cache:
+  distributed:
+    rabbitmq:
+      consumer:
+        id: ${RABBITMQ_CONSUMER_ID:USER_MANAGEMENT_SUB_APPLICATION_1}
+    mode: true
+
+rabbitmq:
+  exchanges:
+    - cache-queue-event-exchange
+
+  queues:
+    - name: user-management-cache-event-queue
+      exchange: cache-queue-event-exchange
+      routingKey: subApplicationId.USER_MANAGEMENT_SUB_APPLICATION
+
+keycloak:
+  realm: code-guardian-realm
