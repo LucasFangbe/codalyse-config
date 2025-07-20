@@ -1,4 +1,6 @@
 spring:
+  application:
+    name: user-management-service
   rabbitmq:
     host: ${RABBITMQ_HOST:localhost}
     port: ${RABBITMQ_PORT:5672}
@@ -33,3 +35,12 @@ rabbitmq:
 
 keycloak:
   realm: code-guardian-realm
+
+management:
+  tracing:
+    enabled: true
+    sampling:
+      probability: 1.0
+  otlp:
+    tracing:
+      endpoint: ${OTLP_URL:http://localhost:4317}
