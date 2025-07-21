@@ -55,4 +55,4 @@ identity:
   server:
     base:
       uri: ${IDENTITY_SERVER_BASE_URI:http://localhost:9090}
-      realm: ${IDENTITY_SERVER_REALM:realm}
+    realm: ${IDENTITY_SERVER_REALM:realm}
