@@ -22,7 +22,7 @@ spring:
       username: ${ADMIN_USERNAME:admin}
       password: ${ADMIN_PASSWORD:admin}
       grant_type: password
-      token-uri: ${TOKEN_URI:http://localhost:9090/realms/realm/protocol/openid-connect/token}
+      token-uri: ${TOKEN_URI:http://localhost:9090/realms/master/protocol/openid-connect/token}
 
 cache:
   distributed:
