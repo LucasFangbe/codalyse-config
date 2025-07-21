@@ -41,6 +41,6 @@ management:
     enabled: true
     sampling:
       probability: 1.0
-  otlp:
+  zipkin:
     tracing:
-      endpoint: ${OTLP_URL:http://localhost:4317}
+      endpoint: ${ZIPKIN_API_ENDPOINT:http://localhost:9411/api/v2/spans}
