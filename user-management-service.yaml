@@ -16,6 +16,13 @@ spring:
           max-active: 10
           max-idle: 5
           min-idle: 1
+  security:
+    admin-direct-access:
+      client-id: ${ADMIN_CLIENT_ID:admin-cli}
+      username: ${ADMIN_USERNAME:admin}
+      password: ${ADMIN_PASSWORD:admin}
+      grant_type: password
+      token-uri: ${TOKEN_URI:http://localhost:9090/realms/realm/protocol/openid-connect/token}
 
 cache:
   distributed:
