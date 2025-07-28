@@ -34,6 +34,7 @@ cache:
 rabbitmq:
   exchanges:
     - cache-queue-event-exchange
+    - email-exchange
 
   queues:
     - name: user-management-cache-event-queue
@@ -71,3 +72,22 @@ user:
                   </p>
                   <p>If you did not request this, you can safely ignore this message.</p>
                   <p>Best regards,<br>The CodeGuardian Team</p>'
+resilience4j:
+  circuitbreaker:
+    instances:
+      keycloakService:
+        registerHealthIndicator: true
+        slidingWindowSize: 5
+        minimumNumberOfCalls: 5
+        failureRateThreshold: 50
+        waitDurationInOpenState: 10s
+        permittedNumberOfCallsInHalfOpenState: 2
+        automaticTransitionFromOpenToHalfOpenEnabled: true
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,metrics
+  health:
+    circuitbreakers:
+      enabled: true
