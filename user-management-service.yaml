@@ -40,6 +40,9 @@ rabbitmq:
     - name: user-management-cache-event-queue
       exchange: cache-queue-event-exchange
       routingKey: subApplicationId.USER_MANAGEMENT_SUB_APPLICATION
+    - name: email-exchange-queue
+      exchange: email-exchange
+      routingKey: .*
 
 keycloak:
   realm: code-guardian-realm
