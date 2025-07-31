@@ -88,8 +88,8 @@ resilience4j:
     instances:
       keycloakService:
         registerHealthIndicator: true
-        slidingWindowSize: 5
-        minimumNumberOfCalls: 5
+        slidingWindowSize: 3
+        minimumNumberOfCalls: 3
         failureRateThreshold: 50
         waitDurationInOpenState: 10s
         permittedNumberOfCallsInHalfOpenState: 2
