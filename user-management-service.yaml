@@ -35,6 +35,7 @@ rabbitmq:
   exchanges:
     - cache-queue-event-exchange
     - email-exchange
+    - user-creation-exchange
 
   queues:
     - name: user-management-cache-event-queue
@@ -42,6 +43,9 @@ rabbitmq:
       routingKey: subApplicationId.USER_MANAGEMENT_SUB_APPLICATION
     - name: email-exchange-queue
       exchange: email-exchange
+      routingKey: .*
+    - name: user-creation-queue
+      exchange: user-creation-exchange
       routingKey: .*
 
 keycloak:
