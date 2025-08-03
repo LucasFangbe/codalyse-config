@@ -23,6 +23,7 @@ spring:
       password: ${ADMIN_PASSWORD:admin}
       grant_type: password
       token-uri: ${TOKEN_URI:http://localhost:9090/realms/master/protocol/openid-connect/token}
+      health-check-uri: ${HEALTH_CHECK_URI:http://localhost:9090/health}
 
 cache:
   distributed:
