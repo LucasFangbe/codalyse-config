@@ -75,6 +75,12 @@ identity:
     realm: ${IDENTITY_SERVER_REALM:realm}
 user:
   creation:
+    message:
+      handler:
+        pause:
+          rate: ${USER_CREATION_HANDLER_RATE:30000}
+    scheduling:
+      fixed-rate: ${USER_CREATION_SCHEDULING_FIXED_RATE:60000}
     email:
       validation:
         url: ${USER_CREATION_EMAIl_VALIDATION_URI:http://localhost:8081/users/[0]/email/validation}
