@@ -78,7 +78,7 @@ user:
     message:
       handler:
         pause:
-          rate: ${USER_CREATION_HANDLER_RATE:30000}
+          rate: ${USER_CREATION_HANDLER_RATE:15000}
     scheduling:
       fixed-rate: ${USER_CREATION_SCHEDULING_FIXED_RATE:60000}
     email:
