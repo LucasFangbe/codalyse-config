@@ -102,7 +102,7 @@ resilience4j:
         slidingWindowSize: 3
         minimumNumberOfCalls: 3
         failureRateThreshold: 50
-        waitDurationInOpenState: 30s
+        waitDurationInOpenState: 10s
         permittedNumberOfCallsInHalfOpenState: 2
         automaticTransitionFromOpenToHalfOpenEnabled: true
         ignoreExceptions:
