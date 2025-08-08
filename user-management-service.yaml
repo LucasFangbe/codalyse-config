@@ -105,8 +105,6 @@ resilience4j:
         waitDurationInOpenState: 10s
         permittedNumberOfCallsInHalfOpenState: 2
         automaticTransitionFromOpenToHalfOpenEnabled: true
-        recordExceptions:
-          - com.codalyse.usermanagement.exception.user.CreateUserException
         ignoreExceptions:
           - com.codalyse.usermanagement.exception.user.DuplicatedUserException
           - com.codalyse.usermanagement.exception.user.UserCreationBadRequestException
