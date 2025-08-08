@@ -95,11 +95,11 @@ user:
                   <p>If you did not request this, you can safely ignore this message.</p>
                   <p>Best regards,<br>The CodeGuardian Team</p>'
 resilience4j:
-  timelimiter:
-    instances:
-      keycloakService:
-        timeout-duration: 1h
-        cancel-running-future: true
+--  timelimiter:
+--    instances:
+--      keycloakService:
+--        timeout-duration: 1h
+--        cancel-running-future: true
   circuitbreaker:
     instances:
       keycloakService:
