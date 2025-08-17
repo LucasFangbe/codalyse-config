@@ -110,3 +110,8 @@ resilience4j:
           - com.codalyse.usermanagement.exception.user.UserCreationBadRequestException
           - com.codalyse.usermanagement.exception.email.PushUserEmailValidationException
           - com.codalyse.usermanagement.exception.UserIdEncoderException
+  timelimiter:
+    instances:
+      keycloakService:
+        timeoutDuration: 30s
+        cancelRunningFuture: true
